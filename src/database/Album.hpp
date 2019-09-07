@@ -1,10 +1,12 @@
-#include "string"
+#include <string>
+#include "Artist.hpp"
+
 using namespace std;
 
 class Album {
 private:
-  string album;
-  int year;
+  char album[20];
+  char year[20];
 
 
 public:
@@ -12,4 +14,4 @@ public:
   void DelAlbum();
 
 
-}
+};

@@ -1,4 +1,4 @@
 CFLAGS=-I.
 
-main: main.cpp 
-	g++ -o main main.cpp arrays.cpp
+main: main.cpp Mgmt.cpp Album.cpp Artist.cpp Song.cpp
+	g++ -o main main.cpp Mgmt.cpp Album.cpp Artist.cpp Song.cpp

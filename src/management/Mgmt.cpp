@@ -1,5 +1,9 @@
+#include <iostream>
+#include "Mgmt.hpp"
 
-Mgmt::Mgmt(){
+using namespace std;
+
+Mgmt::Mgmt(){ //incomplete
 
   cout << "Welcome to your new Music Database!\n"
   << "What would you like to do first?\n"
@@ -8,12 +12,17 @@ Mgmt::Mgmt(){
   cin >> load_choice;
 }
 
-void Mgmt::Options()
-{
+void Mgmt::Options() { //incomplete
 
     cout << "1. Edit Database\n"
     << "2. Search Database\n"
     << "3. Print Database\n"
     << "4. Export Database\n";
     cin >> action_choice;
+}
+
+void Mgmt::NewEntry() {
+
+
+
 }

@@ -1,7 +1,8 @@
+#include <string>
 #include "Artist.h"
 #include "Album.h"
 #include "Song.h"
-#include "string"
+
 using namespace std;
 
 class Mgmt {
@@ -10,6 +11,7 @@ private:
 
 
 public:
+  void NewEntry(); //new artist class object that calls other database classes
   void View(); //dynamic memory allocation to show all data
   void Options();
   void Create();
@@ -22,4 +24,4 @@ public:
   ~Mgmt(); //Saves database to file on exit
 
 
-}
+};

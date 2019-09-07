@@ -1,11 +1,13 @@
-#include "string"
+#include <string>
+#include "Album.hpp"
+
 using namespace std;
 
 class Song {
 private:
-  string song;
-  int track = 1;
-  int duration = 0;
+  char song[20];
+  char track[20] = {'1'};
+  char duration[20] = {'-'};
 
 
 public:
@@ -13,4 +15,4 @@ public:
   void DelSong();
 
 
-}
+};

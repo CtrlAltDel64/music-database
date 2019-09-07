@@ -1,13 +1,15 @@
-#include "string"
+#include <string>
+#include "Mgmt.hpp"
+
 using namespace std;
 
 class Artist {
 private:
-  string artist;
+  char artist[20];
 
 
 public:
   void AddArtist();
-  void DelAlbum();
+  void DelArtist();
 
-}
+};
