@@ -11,7 +11,7 @@ private:
 
 
 public:
-  void AddSong();
+  void AddSong(); // return address location
   void DelSong();
 
 

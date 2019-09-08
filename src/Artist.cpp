@@ -5,7 +5,7 @@ using namespace std;
 
 Artist::Artist() {
 
-  int
+  cout
 
 }
 

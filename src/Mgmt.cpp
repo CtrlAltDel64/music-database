@@ -21,8 +21,14 @@ void Mgmt::Options() { //incomplete
     cin >> action_choice;
 }
 
+char Mgmt::ArtistInfoArray() {
+
+  char *ArtistInfo = new char[20 * ArtistSize];
+
+}
+
 void Mgmt::NewEntry() {
 
-
+ Artist*
 
 }
