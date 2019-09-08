@@ -10,7 +10,7 @@ private:
   char album[20];
   char year[20];
 
-  Song **SongObjects; //array start for objects of class Song
+  Song *SongObjects; //array start for objects of class Song
 
 
 public:

@@ -9,7 +9,7 @@ private:
   int albumExist = 0; //number of existing albums
   char artist[20];
 
-  Album **AlbumObjects; //array start for objects of class Album
+  Album *AlbumObjects; //array start for objects of class Album
 
 
 public:
