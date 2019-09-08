@@ -7,7 +7,7 @@ class Mgmt {
 private:
   int load_choice;
   int action_choice;
-  int artistSize = 100; //number of artists that the database will hold
+  int artistSize = 10; //number of artists that the database will hold
   int artistExist = 0; //number of existing artists
   Artist *artistObjects; //array start for objects of class Artist
 
