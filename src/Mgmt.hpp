@@ -21,7 +21,7 @@ public:
   void Import(); //load database from file //to finish
   void Options(); //to finish
   void NewEntry(); //starts process for new Artist/Album/Song object creation
-  void NewEntry(char **impdata); //new Artist/Album/Song object creation when importing //to finish
+  void NewEntry(char filedata[]); //new Artist/Album/Song object creation when importing //to finish
   void Search(); //search database according to criteria //todo
   void Print(); //Show all in alphabetical order //todo
   void Export(); //export database to file (maybe redundant with destructor) //todo

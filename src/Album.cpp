@@ -16,24 +16,24 @@ void Album::SetAlbumInfo() {
   AddSong();
 }
 
-void Album::SetAlbumInfo(char **impdata) {
+void Album::SetAlbumInfo(char filedata[]) {
   for(int i = 0; i < 20; i++) {
-    if(*impdata[i] != '_' || *impdata[i] != ';') {
-      album[i] = *impdata[i + (21 * 1)];
+    if(filedata[i] != '_' || filedata[i] != ';') {
+      album[i] = filedata[i + (21 * 1)];
     }
     else {
       break;
     }
   }
   for(int i = 0; i < 20; i++) {
-    if(*impdata[i] != '_' || *impdata[i] != ';') {
-      year[i] = *impdata[i + (21 * 2)];
+    if(filedata[i] != '_' || filedata[i] != ';') {
+      year[i] = filedata[i + (21 * 2)];
     }
     else {
       break;
     }
   }
-  AddSong(&impdata);
+  AddSong(filedata);
 }
 
 char *Album::GetAlbum() {
@@ -50,9 +50,9 @@ void Album::AddSong() {
   songExist++;
 }
 
-void Album::AddSong(char **impdata) {
+void Album::AddSong(char filedata[]) {
   Song *A = new Song;
-  A->SetSongInfo(&impdata);
+  A->SetSongInfo(filedata);
   songObjects[songExist] = A; //add Song object a to object array
   songExist++;
 }

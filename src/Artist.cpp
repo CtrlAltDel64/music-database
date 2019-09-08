@@ -14,16 +14,16 @@ void Artist::SetArtistInfo() {
   AddAlbum();
 }
 
-void Artist::SetArtistInfo(char **impdata) {
+void Artist::SetArtistInfo(char filedata[]) {
   for(int i = 0; i < 20; i++) {
-    if(*impdata[i] != '_' || *impdata[i] != ';') {
-      artist[i] = *impdata[i];
+    if(filedata[i] != '_' || filedata[i] != ';') {
+      artist[i] = filedata[i];
     }
     else {
       break;
     }
   }
-  AddAlbum(&impdata);
+  AddAlbum(filedata);
 }
 
 char *Artist::GetArtist() {
@@ -37,9 +37,9 @@ void Artist::AddAlbum() {
   albumExist++;
 }
 
-void Artist::AddAlbum(char **impdata) {
+void Artist::AddAlbum(char filedata[]) {
   Album *A = new Album;
-  A->SetAlbumInfo(&impdata);
+  A->SetAlbumInfo(filedata);
   albumObjects[albumExist] = A; //add Album object to object array
   albumExist++;
 }

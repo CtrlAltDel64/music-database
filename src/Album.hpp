@@ -17,11 +17,11 @@ public:
   Album();
 
   void SetAlbumInfo();
-  void SetAlbumInfo(char **impdata); //todo
+  void SetAlbumInfo(char filedata[]); //todo
   char *GetAlbum();
   char *GetYear();
   void AddSong();
-  void AddSong(char **impdata); //todo
+  void AddSong(char filedata[]); //todo
 
   //~Album();
 

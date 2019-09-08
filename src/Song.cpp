@@ -17,26 +17,26 @@ void Song::SetSongInfo() {
   cin >> duration;
 }
 
-void Song::SetSongInfo(char **impdata) {
+void Song::SetSongInfo(char filedata[]) {
   for(int i = 0; i < 20; i++) {
-    if(*impdata[i] != '_' || *impdata[i] != ';') {
-      song[i] = *impdata[i + (21 * 3)];
+    if(filedata[i] != '_' || filedata[i] != ';') {
+      song[i] = filedata[i + (21 * 3)];
     }
     else {
       break;
     }
   }
   for(int i = 0; i < 20; i++) {
-    if(*impdata[i] != '_' || *impdata[i] != ';') {
-      track[i] = *impdata[i + (21 * 4)];
+    if(filedata[i] != '_' || filedata[i] != ';') {
+      track[i] = filedata[i + (21 * 4)];
     }
     else {
       break;
     }
   }
   for(int i = 0; i < 20; i++) {
-    if(*impdata[i] != '_' || *impdata[i] != ';') {
-      duration[i] = *impdata[i + (21 * 5)];
+    if(filedata[i] != '_' || filedata[i] != ';') {
+      duration[i] = filedata[i + (21 * 5)];
     }
     else {
       break;

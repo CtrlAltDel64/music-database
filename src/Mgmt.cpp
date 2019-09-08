@@ -31,12 +31,10 @@ int Mgmt::Getaction_choice() {
 
 void Mgmt::Import() {
   ifstream myfile;
-  myfile.open("database")
+  myfile.open("database");
 
   bool end = false;
   char filedata[21 * 6], buffer[1];
-  char *dataptr;
-  dataptr = filedata;
 
   myfile.read(buffer, 1);
   while(!end) {
@@ -55,7 +53,7 @@ void Mgmt::Import() {
         myfile.read(buffer, 1);
       }
     }
-    NewEntry(&dataptr);
+    NewEntry(filedata);
     if(buffer[0] == ';') { //when end of file is reached (;; is the condition)
       end = true;
     }
@@ -104,9 +102,9 @@ void Mgmt::NewEntry() {
   Options();
 }
 
-void Mgmt::NewEntry(char **impdata) {
+void Mgmt::NewEntry(char filedata[]) {
   Artist *A = new Artist; //create new Artist object
-  A->SetArtistInfo(&impdata);
+  A->SetArtistInfo(filedata);
   artistObjects[artistExist] = A; //add Artist object to object array
   artistExist++;
   Options();
