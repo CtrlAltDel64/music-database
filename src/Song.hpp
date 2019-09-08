@@ -13,7 +13,7 @@ public:
   Song();
 
   void SetSongInfo();
-  void SetSongInfo(char filedata[]); //todo
+  void SetSongInfo(char filedata[]); //to verify
   char *GetSong();
   char *GetTrack();
   char *GetDuration();

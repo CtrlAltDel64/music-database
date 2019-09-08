@@ -16,10 +16,10 @@ public:
   Artist(); //gets artist name + create album reference arrays
 
   void SetArtistInfo();
-  void SetArtistInfo(char filedata[]); //todo
+  void SetArtistInfo(char filedata[]); //to verify
   char *GetArtist();
   void AddAlbum();
-  void AddAlbum(char filedata[]); //todo
+  void AddAlbum(char filedata[]); //to verify
 
     //~Artist();
 
