@@ -6,6 +6,7 @@ using namespace std;
 
 Artist::Artist() {
   cout << "\nEnter artist name: ";
+  cin.ignore(100, '\n');
   cin.getline(artist, 19);
 }
 
