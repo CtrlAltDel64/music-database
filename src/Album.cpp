@@ -24,6 +24,6 @@ char *Album::GetYear() {
 
 void Album::AddSong() {
   Song *A = new Song;
-  songObjects[songExist] = {*A}; //add Song object a to list
+  songObjects[songExist] = A; //add Song object a to list
   songExist++;
 }
