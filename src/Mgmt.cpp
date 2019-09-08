@@ -12,7 +12,7 @@ Mgmt::Mgmt(){ //incomplete
   << "2. Create new database.\n";
   cin >> load_choice;
 
-  Artist **ArtistObjects = new *Artist[ArtistSize];
+  Artist *ArtistObjects = new Artist[ArtistSize];
 }
 
 void Mgmt::Options() { //incomplete
