@@ -16,8 +16,8 @@ void Artist::SetArtistInfo() {
 
 void Artist::SetArtistInfo(char **impdata) {
   for(int i = 0; i < 20; i++) {
-    if(impdata[i] != '_' || impdata[i] != ';') {
-      artist[i] = impdata[i];
+    if(*impdata[i] != '_' || *impdata[i] != ';') {
+      artist[i] = *impdata[i];
     }
     else {
       break;
