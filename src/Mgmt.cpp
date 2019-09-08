@@ -35,7 +35,7 @@ void Mgmt::Options() { //incomplete
 void Mgmt::NewEntry() {
   Artist *A = new Artist; //create new Artist object
   cout << "help2";
-  artistObjects[artistExist] = {*A}; //add Artist object to list
+  artistObjects[artistExist] = A; //add Artist object to list
   artistExist++;
 }
 
