@@ -10,6 +10,7 @@ Mgmt::Mgmt(){ //incomplete
   cin >> load_choice;
 
   Artist *artistObjects = new Artist[artistSize];
+  cout << "help";
 }
 
 int Mgmt::Getload_choice() {
@@ -32,9 +33,9 @@ void Mgmt::Options() { //incomplete
 }
 
 void Mgmt::NewEntry() {
-  Artist *a = new Artist; //create new Artist object
-
-  artistObjects[artistExist] = {*a}; //add Artist object to list
+  Artist *A = new Artist; //create new Artist object
+  cout << "help2";
+  artistObjects[artistExist] = {*A}; //add Artist object to list
   artistExist++;
 }
 

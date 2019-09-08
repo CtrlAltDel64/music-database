@@ -18,7 +18,7 @@ char *Artist::GetArtist() {
 }
 
 void Artist::AddAlbum() {
-  Album *a = new Album;
-  albumObjects[albumExist] = {*a}; //add Album object to list
+  Album *A = new Album;
+  albumObjects[albumExist] = {*A}; //add Album object to list
   albumExist++;
 }
