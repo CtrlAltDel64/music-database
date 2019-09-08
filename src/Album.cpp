@@ -13,6 +13,7 @@ void Album::SetAlbumInfo() {
   cin >> album;
   cout << "\nEnter album year: ";
   cin >> year;
+  AddSong();
 }
 
 char *Album::GetAlbum() {

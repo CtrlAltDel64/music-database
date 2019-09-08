@@ -11,6 +11,7 @@ Artist::Artist() {
 void Artist::SetArtistInfo() {
   cout << "\nEnter artist name: ";
   cin >> artist;
+  AddAlbum();
 }
 
 char *Artist::GetArtist() {
