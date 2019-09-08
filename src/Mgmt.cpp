@@ -27,6 +27,7 @@ void Mgmt::Options() { //incomplete
   cin >> action_choice;
 
   if(action_choice == 1) {
+    Artist *artistObjects = new Artist[artistSize];
     NewEntry();
   }
 }
@@ -34,7 +35,6 @@ void Mgmt::Options() { //incomplete
 void Mgmt::NewEntry() {
   Artist *A = new Artist; //create new Artist object
   cout << "help2";
-  Artist *artistObjects = new Artist[artistSize];
   artistObjects[artistExist] = {*A}; //add Artist object to list
   artistExist++;
 }
