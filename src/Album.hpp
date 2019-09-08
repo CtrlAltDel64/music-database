@@ -18,5 +18,8 @@ public:
   char *GetYear();
   void AddSong();
 
+  Album();
+  ~Album();
+
 
 };

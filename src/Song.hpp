@@ -14,5 +14,8 @@ public:
   char *GetTrack();
   char *GetDuration();
 
+  Song();
+  ~Song();
+
 
 };
