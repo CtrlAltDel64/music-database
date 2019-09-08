@@ -13,6 +13,9 @@ private:
 
 
 public:
+  int Getload_choice();
+  int Getaction_choice();
+
   void NewEntry(); //starts process for new Artist/Album/Song object creation
   void Print(); //Show all in alphabetical order
   void Options();
