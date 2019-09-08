@@ -14,12 +14,13 @@ private:
 
 
 public:
+  Album();
+
   void SetAlbumInfo();
   char *GetAlbum();
   char *GetYear();
   void AddSong();
 
-  Album();
   //~Album();
 
 

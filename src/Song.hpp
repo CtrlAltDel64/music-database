@@ -10,12 +10,13 @@ private:
 
 
 public:
+  Song();
+
   void SetSongInfo();
   char *GetSong();
   char *GetTrack();
   char *GetDuration();
 
-  Song();
   //~Song();
 
 

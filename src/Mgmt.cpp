@@ -4,10 +4,21 @@
 
 using namespace std;
 
-Mgmt::Mgmt(){ //incomplete
+Mgmt::Mgmt(){
   cout  << "1. Load existing database\n"
     << "2. Create new database\n";
   cin >> load_choice;
+
+  if(load_choice == 1) {
+
+  }
+  if(load_choice == 2) {
+    artistObjects = new Artist*[artistSize];
+    Options();
+  }
+  else {
+    cout "Creating new database!"
+  }
 }
 
 int Mgmt::Getload_choice() {
@@ -18,15 +29,30 @@ int Mgmt::Getaction_choice() {
 }
 
 void Mgmt::Options() { //incomplete
-  cout << "1. Edit Database\n"
+  cout << "\n1. Edit Database\n"
   << "2. Search Database\n"
   << "3. Print Database\n"
-  << "4. Export Database\n";
+  << "4. Export Database\n"
+  << "5. Exit";
   cin >> action_choice;
 
-  if(action_choice == 1) {
-    artistObjects = new Artist*[artistSize];
-    NewEntry();
+  switch (action_choice) {
+    case 1:
+      NewEntry();
+    case 2:
+      Search();
+      break;
+    case 3:
+      Print();
+      break;
+    case 4:
+      Export();
+      break;
+    case 5:
+      cout << "\nGoodbye!";
+      break;
+    default:
+      cout << "\nPlease try again. Select a number 1-5."
   }
 }
 
@@ -35,6 +61,7 @@ void Mgmt::NewEntry() {
   A->SetArtistInfo();
   artistObjects[artistExist] = A; //add Artist object to list
   artistExist++;
+  Options();
 }
 
 Mgmt::~Mgmt() {

@@ -13,18 +13,18 @@ private:
 
 
 public:
+  Mgmt(); //Loads or creates new database
+
   int Getload_choice();
   int Getaction_choice();
 
-  void NewEntry(); //starts process for new Artist/Album/Song object creation
-  void Print(); //Show all in alphabetical order
-  void Options();
   void Import(); //load database from file
-  void Export(); //export database to file (maybe redundant with destructor)
+  void Options();
+  void NewEntry(); //starts process for new Artist/Album/Song object creation
   void Search(); //search database according to criteria
+  void Print(); //Show all in alphabetical order
+  void Export(); //export database to file (maybe redundant with destructor)
 
-
-  Mgmt(); //Loads or creates new database
   ~Mgmt(); //Saves database to file on exit then clears memory
 
 
