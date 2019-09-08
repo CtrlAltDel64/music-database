@@ -12,7 +12,7 @@ Artist::Artist() {
 }
 
 char *Artist::GetArtist() {
- return artist;
+  return artist;
 }
 
 void Artist::AddAlbum() {

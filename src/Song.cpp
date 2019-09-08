@@ -14,11 +14,11 @@ Song::Song() {
 }
 
 char *Song::GetSong() {
- return song;
+  return song;
 }
 char *Song::GetTrack() {
- return track;
+  return track;
 }
 char *Song::GetDuration() {
- return duration;
+  return duration;
 }

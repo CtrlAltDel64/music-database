@@ -14,10 +14,10 @@ Album::Album() {
 }
 
 char *Album::GetAlbum() {
- return album;
+  return album;
 }
 char *Album::GetYear() {
- return year;
+  return year;
 }
 
 void Album::AddSong() {
