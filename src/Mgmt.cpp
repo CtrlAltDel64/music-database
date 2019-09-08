@@ -10,10 +10,10 @@ Mgmt::Mgmt(){ //incomplete
   cin >> load_choice;
 }
 
-void Getload_choice() {
+int Getload_choice() {
   return load_choice;
 }
-void Getaction_choice() {
+int Getaction_choice() {
   return action_choice;
 }
 
@@ -31,7 +31,7 @@ void Mgmt::Options() { //incomplete
 
 void Mgmt::NewEntry() {
   Artist *a = new Artist; //create new Artist object
-  Artist *ArtistObjects = new Artist[artistSize];
+  Artist **ArtistObjects = new Artist[artistSize];
   Artist *ArtistObjects[artistExist] = {*a}; //add Artist object to list
   artistExist++;
 }
