@@ -5,8 +5,8 @@ using namespace std;
 
 class Album {
 private:
-  int SongSize = 20; // number of songs each album will hold;
-  int SongExist = 0; //number of existing songs
+  int songSize = 20; // number of songs each album will hold;
+  int songExist = 0; //number of existing songs
   char album[20];
   char year[20];
 

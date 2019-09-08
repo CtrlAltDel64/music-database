@@ -12,7 +12,7 @@ Mgmt::Mgmt(){ //incomplete
   << "2. Create new database.\n";
   cin >> load_choice;
 
-  Artist *ArtistObjects = new Artist[ArtistSize];
+  Artist *ArtistObjects = new Artist[artistSize];
 }
 
 void Mgmt::Options() { //incomplete
@@ -29,11 +29,12 @@ void Mgmt::Options() { //incomplete
 
 void Mgmt::NewEntry() {
  Artist *a = new Artist; //create new Artist object
- Artist *ArtistObjects[ArtistExist] = *a; //add Artist object to list
+ Artist *ArtistObjects[artistExist] = a; //add Artist object address to list
+ artistExist++;
 }
 
 Mgmt::~Mgmt() {
-  for(int i = 0; i < ArtistExist; i++) {
+  for(int i = 0; i < artistExist; i++) {
     //delete loop
   }
 }
