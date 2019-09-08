@@ -13,7 +13,7 @@ Mgmt::Mgmt(){
 
   }
   if(load_choice == 2) {
-    artistObjects = new Artist*[artistSize];
+    artistObjects = new Artist*[artistSize]; //Creates array for pointers to Artist objects
     Options();
   }
   else {
@@ -28,7 +28,7 @@ int Mgmt::Getaction_choice() {
   return action_choice;
 }
 
-void Mgmt::Options() { //incomplete
+void Mgmt::Options() {
   cout << "\n1. Edit Database\n"
   << "2. Search Database\n"
   << "3. Print Database\n"
@@ -52,14 +52,15 @@ void Mgmt::Options() { //incomplete
       cout << "\nGoodbye!";
       break;
     default:
-      cout << "\nPlease try again. Select a number 1-5."
+      cout << "\nPlease try again. Select a number 1-5.";
+      Options();
   }
 }
 
 void Mgmt::NewEntry() {
   Artist *A = new Artist; //create new Artist object
   A->SetArtistInfo();
-  artistObjects[artistExist] = A; //add Artist object to list
+  artistObjects[artistExist] = A; //add Artist object to object array
   artistExist++;
   Options();
 }

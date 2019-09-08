@@ -5,7 +5,7 @@
 using namespace std;
 
 Album::Album() {
-  songObjects = new Song*[songSize];
+  songObjects = new Song*[songSize]; //Creates array for pointers to Song objects
 }
 
 void Album::SetAlbumInfo() {
@@ -26,6 +26,6 @@ char *Album::GetYear() {
 void Album::AddSong() {
   Song *A = new Song;
   A->SetSongInfo();
-  songObjects[songExist] = A; //add Song object a to list
+  songObjects[songExist] = A; //add Song object a to object array
   songExist++;
 }

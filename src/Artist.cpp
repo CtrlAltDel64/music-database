@@ -5,7 +5,7 @@
 using namespace std;
 
 Artist::Artist() {
-  albumObjects = new Album*[albumSize];
+  albumObjects = new Album*[albumSize]; //Creates array for pointers to Album objects
 }
 
 void Artist::SetArtistInfo() {
@@ -21,6 +21,6 @@ char *Artist::GetArtist() {
 void Artist::AddAlbum() {
   Album *A = new Album;
   A->SetAlbumInfo();
-  albumObjects[albumExist] = A; //add Album object to list
+  albumObjects[albumExist] = A; //add Album object to object array
   albumExist++;
 }
