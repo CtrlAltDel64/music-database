@@ -8,7 +8,7 @@ int main() {
   cout << "Welcome to your new Music Database!\n"
   << "What would you like to do first?\n";
   Mgmt Database;
-  Database.Options();
+  //Database.Options();
 
   return 0;
 }

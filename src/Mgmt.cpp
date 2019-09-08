@@ -5,8 +5,8 @@
 using namespace std;
 
 Mgmt::Mgmt(){ //incomplete
-  cout  << "1. Load existing database.\n"
-    << "2. Create new database.\n";
+  cout  << "1. Load existing database\n"
+    << "2. Create new database\n";
   cin >> load_choice;
 
   Artist *ArtistObjects = new Artist[artistSize];
