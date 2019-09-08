@@ -18,12 +18,13 @@ public:
   int Getload_choice();
   int Getaction_choice();
 
-  void Import(); //load database from file
-  void Options();
+  void Import(); //load database from file //to finish
+  void Options(); //to finish
   void NewEntry(); //starts process for new Artist/Album/Song object creation
-  void Search(); //search database according to criteria
-  void Print(); //Show all in alphabetical order
-  void Export(); //export database to file (maybe redundant with destructor)
+  void NewEntry(char **impdata); //new Artist/Album/Song object creation when importing //to finish
+  void Search(); //search database according to criteria //todo
+  void Print(); //Show all in alphabetical order //todo
+  void Export(); //export database to file (maybe redundant with destructor) //todo
 
   ~Mgmt(); //Saves database to file on exit then clears memory
 

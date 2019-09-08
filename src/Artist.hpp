@@ -16,6 +16,7 @@ public:
   Artist(); //gets artist name + create album reference arrays
 
   void SetArtistInfo();
+  void SetArtistInfo(char **impdata); //todo
   char *GetArtist();
   void AddAlbum();
 
