@@ -27,7 +27,7 @@ void Mgmt::Options() { //incomplete
   cin >> action_choice;
 
   if(action_choice == 1) {
-    Artist *artistObjects = new Artist[artistSize];
+    artistObjects = new Artist*[artistSize];
     NewEntry();
   }
 }
