@@ -1,15 +1,21 @@
 #include <string>
+#include <iostream>
 #include "Artist.hpp"
 
 using namespace std;
 
 Artist::Artist() {
+  cout << "\nEnter artist name: ";
+  cin.getline(artist, 19);
 
-  cout
-
+  Album **AlbumObjects = new Album[AlbumSize];
 }
 
-void Artist::AddArtist() {
-  cout << "Enter artist name: ";
-  cin >> artist;
+char *Artist::GetArtist() {
+ return artist;
+}
+
+void Artist::AddAlbum() {
+  Album *a = new Album;
+  Album *AlbumObjects[AlbumExist] = *a; //add Album object to list
 }

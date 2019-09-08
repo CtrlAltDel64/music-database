@@ -1,26 +1,24 @@
 #include <string>
-#include "Artist.h"
-#include "Album.h"
-#include "Song.h"
+#include "Artist.hpp"
 
 using namespace std;
 
 class Mgmt {
 private:
+  int load_choice;
+  int action_choice;
   int ArtistSize = 100; //number of artists that the database will hold
-  int ArtistExist = 0; //number or existing artists
-  char *ArtistInfo; //array start for the artist names
-
-  void ArtistInfoArray();
+  int ArtistExist = 0; //number of existing artists
+  Artist **ArtistObjects; //array start for objects of class Artist
 
 
 public:
-  void NewEntry(); //new artist class object that calls other database classes
+  void NewEntry(); //starts process for new Artist/Album/Song object creation
   void Print(); //Show all in alphabetical order
   void Options();
-  void Import();
-  void Export();
-  void Search();
+  void Import(); //load database from file
+  void Export(); //export database to file (maybe redundant with destructor)
+  void Search(); //search database according to criteria
 
 
   Mgmt(); //Loads or creates new database

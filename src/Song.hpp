@@ -1,5 +1,4 @@
 #include <string>
-#include "Album.hpp"
 
 using namespace std;
 
@@ -11,8 +10,9 @@ private:
 
 
 public:
-  void AddSong(); // return address location
-  void DelSong();
+  char *GetSong();
+  char *GetTrack();
+  char *GetDuration();
 
 
 };
