@@ -10,6 +10,7 @@ private:
 
 
 public:
+  boid SetSongInfo();
   char *GetSong();
   char *GetTrack();
   char *GetDuration();

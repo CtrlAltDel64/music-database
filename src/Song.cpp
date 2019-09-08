@@ -5,6 +5,10 @@
 using namespace std;
 
 Song::Song() {
+  
+}
+
+void Song::SetSongInfo() {
   cout << "\nEnter song name: ";
   cin.getline(song, 19);
   cout << "\nEnter track number: ";

@@ -14,6 +14,7 @@ private:
 
 
 public:
+  void SetAlbumInfo();
   char *GetAlbum();
   char *GetYear();
   void AddSong();

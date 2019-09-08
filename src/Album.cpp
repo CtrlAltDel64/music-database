@@ -5,6 +5,10 @@
 using namespace std;
 
 Album::Album() {
+  Song *songObjects = new Song[songSize];
+}
+
+void Album::SetAlbumInfo() {
   cout << "\nEnter album name: ";
   cin.getline(album, 19);
   cout << "\nEnter album year: ";
@@ -20,7 +24,6 @@ char *Album::GetYear() {
 
 void Album::AddSong() {
   Song *a = new Song;
-  Song *songObjects = new Song[songSize];
   songObjects[songExist] = {*a}; //add Song object a to list
   songExist++;
 }

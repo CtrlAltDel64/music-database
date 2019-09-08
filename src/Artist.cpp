@@ -5,8 +5,11 @@
 using namespace std;
 
 Artist::Artist() {
+  Album *albumObjects = new Album[albumSize];
+}
+
+void Artist::SetArtistInfo() {
   cout << "\nEnter artist name: ";
-  cin.ignore(100, '\n');
   cin.getline(artist, 19);
 }
 
@@ -16,7 +19,6 @@ char *Artist::GetArtist() {
 
 void Artist::AddAlbum() {
   Album *a = new Album;
-  Album *albumObjects = new Album[albumSize];
   albumObjects[albumExist] = {*a}; //add Album object to list
   albumExist++;
 }
