@@ -5,16 +5,16 @@
 using namespace std;
 
 Song::Song() {
-  
+
 }
 
 void Song::SetSongInfo() {
   cout << "\nEnter song name: ";
-  cin.getline(song, 19);
+  cin >> song;
   cout << "\nEnter track number: ";
-  cin.getline(track, 19);
+  cin >> track;
   cout << "\nEnter song duration: ";
-  cin.getline(duration, 19);
+  cin >> duration;
 }
 
 char *Song::GetSong() {

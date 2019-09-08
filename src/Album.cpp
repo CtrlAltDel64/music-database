@@ -10,9 +10,9 @@ Album::Album() {
 
 void Album::SetAlbumInfo() {
   cout << "\nEnter album name: ";
-  cin.getline(album, 19);
+  cin >> album;
   cout << "\nEnter album year: ";
-  cin.getline(year, 19);
+  cin >> year;
 }
 
 char *Album::GetAlbum() {
@@ -24,6 +24,7 @@ char *Album::GetYear() {
 
 void Album::AddSong() {
   Song *A = new Song;
+  A->SetSongInfo();
   songObjects[songExist] = A; //add Song object a to list
   songExist++;
 }

@@ -10,7 +10,7 @@ Artist::Artist() {
 
 void Artist::SetArtistInfo() {
   cout << "\nEnter artist name: ";
-  cin.getline(artist, 19);
+  cin >> artist;
 }
 
 char *Artist::GetArtist() {
@@ -19,6 +19,7 @@ char *Artist::GetArtist() {
 
 void Artist::AddAlbum() {
   Album *A = new Album;
+  A->SetAlbumInfo();
   albumObjects[albumExist] = A; //add Album object to list
   albumExist++;
 }
