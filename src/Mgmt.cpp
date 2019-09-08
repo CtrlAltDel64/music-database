@@ -17,7 +17,7 @@ Mgmt::Mgmt(){
     Options();
   }
   else {
-    cout "Creating new database!";
+    cout << "Creating new database!";
   }
 }
 
