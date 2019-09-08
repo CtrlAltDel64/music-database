@@ -33,7 +33,7 @@ void Album::SetAlbumInfo(char **impdata) {
       break;
     }
   }
-  AddSong(char &impdata);
+  AddSong(&impdata);
 }
 
 char *Album::GetAlbum() {

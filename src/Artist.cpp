@@ -23,7 +23,7 @@ void Artist::SetArtistInfo(char **impdata) {
       break;
     }
   }
-  AddAlbum(char &impdata);
+  AddAlbum(&impdata);
 }
 
 char *Artist::GetArtist() {
