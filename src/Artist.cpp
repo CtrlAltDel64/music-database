@@ -23,7 +23,7 @@ void Artist::SetArtistInfo(char **impdata) {
       break;
     }
   }
-  AddAlbum();
+  AddAlbum(char &impdata);
 }
 
 char *Artist::GetArtist() {
@@ -33,6 +33,13 @@ char *Artist::GetArtist() {
 void Artist::AddAlbum() {
   Album *A = new Album;
   A->SetAlbumInfo();
+  albumObjects[albumExist] = A; //add Album object to object array
+  albumExist++;
+}
+
+void Artist::AddAlbum(char **impdata) {
+  Album *A = new Album;
+  A->SetAlbumInfo(&impdata);
   albumObjects[albumExist] = A; //add Album object to object array
   albumExist++;
 }

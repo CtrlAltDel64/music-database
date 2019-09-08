@@ -16,6 +16,26 @@ void Album::SetAlbumInfo() {
   AddSong();
 }
 
+void Album::SetAlbumInfo(char **impdata) {
+  for(int i = 0; i < 20; i++) {
+    if(*impdata[i] != '_' || *impdata[i] != ';') {
+      album[i] = *impdata[i + (21 * 1)];
+    }
+    else {
+      break;
+    }
+  }
+  for(int i = 0; i < 20; i++) {
+    if(*impdata[i] != '_' || *impdata[i] != ';') {
+      year[i] = *impdata[i + (21 * 2)];
+    }
+    else {
+      break;
+    }
+  }
+  AddSong(char &impdata);
+}
+
 char *Album::GetAlbum() {
   return album;
 }
@@ -26,6 +46,13 @@ char *Album::GetYear() {
 void Album::AddSong() {
   Song *A = new Song;
   A->SetSongInfo();
+  songObjects[songExist] = A; //add Song object a to object array
+  songExist++;
+}
+
+void Album::AddSong(char **impdata) {
+  Song *A = new Song;
+  A->SetSongInfo(&impdata);
   songObjects[songExist] = A; //add Song object a to object array
   songExist++;
 }

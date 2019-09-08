@@ -73,14 +73,19 @@ void Mgmt::Options() {
   switch (action_choice) {
     case 1:
       NewEntry();
+      Options();
+      break;
     case 2:
       Search();
+      Options();
       break;
     case 3:
       Print();
+      Options();
       break;
     case 4:
       Export();
+      Options();
       break;
     case 5:
       cout << "\nGoodbye!";
@@ -118,6 +123,7 @@ void Mgmt::Export() {
 }
 
 Mgmt::~Mgmt() {
+  Export();
   for(int i = 0; i < artistExist; i++) {
     //delete loop
   }

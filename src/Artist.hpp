@@ -19,6 +19,7 @@ public:
   void SetArtistInfo(char **impdata); //todo
   char *GetArtist();
   void AddAlbum();
+  void AddAlbum(char **impdata); //todo
 
     //~Artist();
 
