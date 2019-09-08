@@ -19,7 +19,7 @@ public:
   void AddSong();
 
   Album();
-  ~Album();
+  //~Album();
 
 
 };
