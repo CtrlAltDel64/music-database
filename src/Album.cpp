@@ -5,7 +5,7 @@
 using namespace std;
 
 Album::Album() {
-  Song *songObjects = new Song*[songSize];
+  Song songObjects = new Song*[songSize];
 }
 
 void Album::SetAlbumInfo() {

@@ -5,7 +5,7 @@
 using namespace std;
 
 Artist::Artist() {
-  Album *albumObjects = new Album*[albumSize];
+  Album albumObjects = new Album*[albumSize];
 }
 
 void Artist::SetArtistInfo() {
