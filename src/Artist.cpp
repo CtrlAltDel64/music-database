@@ -5,6 +5,10 @@
 using namespace std;
 
 Artist::Artist() {
+  cout << "hey";
+}
+
+void Artist::SetArtist() {
   cout << "\nEnter artist name: ";
   cin.getline(artist, 19);
 }

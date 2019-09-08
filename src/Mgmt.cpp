@@ -32,6 +32,7 @@ void Mgmt::Options() { //incomplete
 void Mgmt::NewEntry() {
   Artist *a = new Artist; //create new Artist object
   cout << "yo";
+  *a.SetArtist();
   Artist *artistObjects = new Artist[artistSize];
   artistObjects[artistExist] = {*a}; //add Artist object to list
   artistExist++;

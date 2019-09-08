@@ -11,6 +11,8 @@ private:
 
   Album *albumObjects; //array start for objects of class Album
 
+  void SetArtist();
+
 
 public:
   Artist(); //gets artist name + create album reference arrays
