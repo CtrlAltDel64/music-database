@@ -1,8 +1,5 @@
 #include <iostream>
 #include <string>
-#include "Artist.hpp"
-#include "Album.hpp"
-#include "Song.hpp"
 #include "Mgmt.hpp"
 
 using namespace std;
