@@ -9,7 +9,6 @@ Mgmt::Mgmt(){ //incomplete
     << "2. Create new database\n";
   cin >> load_choice;
 
-  Artist *artistObjects = new Artist[artistSize];
   cout << "help";
 }
 
@@ -35,6 +34,7 @@ void Mgmt::Options() { //incomplete
 void Mgmt::NewEntry() {
   Artist *A = new Artist; //create new Artist object
   cout << "help2";
+  Artist *artistObjects = new Artist[artistSize];
   artistObjects[artistExist] = {*A}; //add Artist object to list
   artistExist++;
 }
