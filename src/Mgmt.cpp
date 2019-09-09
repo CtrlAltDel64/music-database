@@ -65,7 +65,7 @@ void Mgmt::Options() {
   << "2. Search Database\n"
   << "3. Print Database\n"
   << "4. Export Database\n"
-  << "5. Exit";
+  << "5. Exit\n";
   cin >> action_choice;
 
   switch (action_choice) {
