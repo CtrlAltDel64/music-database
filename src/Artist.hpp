@@ -20,6 +20,7 @@ public:
   char *GetArtist();
   void AddAlbum();
   void AddAlbum(char filedata[]); //to verify
+  void Print();
 
     //~Artist();
 

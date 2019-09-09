@@ -22,6 +22,7 @@ public:
   char *GetYear();
   void AddSong();
   void AddSong(char filedata[]); //to verify
+  void Print();
 
   //~Album();
 

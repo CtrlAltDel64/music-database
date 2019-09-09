@@ -11,7 +11,8 @@ Mgmt::Mgmt(){
   cin >> load_choice;
 
   if(load_choice == 1) {
-
+    Import();
+    Options();
   }
   if(load_choice == 2) {
     artistObjects = new Artist*[artistSize]; //Creates array for pointers to Artist objects
@@ -34,23 +35,32 @@ void Mgmt::Import() {
   myfile.open("database");
 
   bool end = false;
-  char filedata[21 * 6], buffer[1];
-
+  char filedata[21 * 6], buffer[1] = {'a'};
+  cout << "help1\n";
   myfile.read(buffer, 1);
+  cout << buffer[0] << "\n";
+  cout << "help2\n";
   while(!end) {
+    cout << "help2.5\n";
     for(int i = 0; i < 6; i++) {
       for(int j = 0; j < 20; j++) {
         if(buffer[0] == '_') { //when end of info is reached (e.g. title of song)
           break;
         }
+        cout << "help2.6\n";
         if(buffer[0] == ';') { //when end of data line/entry is reached
           break;
         }
-        if(buffer[0] > 33 || buffer[0] > 122) { //if not an expected character
+        cout << "help2.7\n";
+        if((int)buffer[0] < 33 || (int)buffer[0] > 122) { //if not an expected character
           break;
         }
+        cout << "help2.8\n";
+        cout << "help3\n";
         filedata[j + (21 * i)] = buffer[0];
+        cout << "help4\n";
         myfile.read(buffer, 1);
+        cout << "help\n";
       }
     }
     NewEntry(filedata);
@@ -58,6 +68,7 @@ void Mgmt::Import() {
       end = true;
     }
   }
+  myfile.close();
 }
 
 void Mgmt::Options() {
@@ -113,8 +124,11 @@ void Mgmt::NewEntry(char filedata[]) {
 void Mgmt::Search() {
 
 }
-void Mgmt::Print() {
-
+void Mgmt::Print() { //simple, unordered
+  for (int i = 0; i < artistExist; i++) {
+    cout << artistObjects[i]->GetArtist() << '\t';
+    artistObjects[i]->Print();
+  }
 }
 void Mgmt::Export() {
 

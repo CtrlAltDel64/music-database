@@ -43,3 +43,11 @@ void Artist::AddAlbum(char filedata[]) {
   albumObjects[albumExist] = A; //add Album object to object array
   albumExist++;
 }
+
+void Artist::Print() {
+  for (int i = 0; i < albumExist; i++) {
+    cout << albumObjects[i]->GetAlbum() << '\t';
+    cout << albumObjects[i]->GetYear() << '\t';
+    albumObjects[i]->Print();
+  }
+}

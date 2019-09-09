@@ -56,3 +56,11 @@ void Album::AddSong(char filedata[]) {
   songObjects[songExist] = A; //add Song object a to object array
   songExist++;
 }
+
+void Album::Print() {
+  for (int i = 0; i < songExist; i++) {
+    cout << songObjects[i]->GetSong() << '\t';
+    cout << songObjects[i]->GetTrack() << '\t';
+    cout << songObjects[i]->GetDuration() << '\n';
+  }
+}
