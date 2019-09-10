@@ -10,12 +10,13 @@ Mgmt::Mgmt(){
     << "2. Create new database\n";
   cin >> load_choice;
 
+  artistObjects = new Artist*[artistSize]; //Creates array for pointers to Artist objects
+
   if(load_choice == 1) {
     Import();
     Options();
   }
   if(load_choice == 2) {
-    artistObjects = new Artist*[artistSize]; //Creates array for pointers to Artist objects
     Options();
   }
   else {
@@ -36,39 +37,26 @@ void Mgmt::Import() {
 
   bool end = false;
   char filedata[21 * 6], buffer[1] = {'a'};
-  cout << "help1\n";
-  myfile.read(buffer, 1);
-  cout << buffer[0] << "\n";
-  cout << "help2\n";
   while(!end) {
-    cout << "help2.5\n";
-    for(int i = 0; i < 6; i++) {
-      for(int j = 0; j < 20; j++) {
-        if(buffer[0] == '_') { //when end of info is reached (e.g. title of song)
-          break;
-        }
-        cout << "help2.6\n";
-        if(buffer[0] == ';') { //when end of data line/entry is reached
-          break;
-        }
-        cout << "help2.7\n";
-        if((int)buffer[0] < 33 || (int)buffer[0] > 122) { //if not an expected character
-          break;
-        }
-        cout << "help2.8\n";
-        cout << "help3\n";
-        filedata[j + (21 * i)] = buffer[0];
-        cout << "help4\n";
+    for(int i = 0; i < 6; i++) { //6 runs for number of fields to import
+      for(int j = 0; j < 20; j++) { //20 runs for max number of characters per field
         myfile.read(buffer, 1);
-        cout << "help\n";
+        if(buffer[0] > 33 || buffer[0] < 122) { //if expected character
+          if(buffer[0] == '_' || buffer[0] == ';') { //when end of field or line is reached
+            break;
+          }
+          filedata[j + (21 * i)] = buffer[0];
+        }
       }
     }
     NewEntry(filedata);
+    myfile.read(buffer, 1);
     if(buffer[0] == ';') { //when end of file is reached (;; is the condition)
       end = true;
     }
   }
   myfile.close();
+  Options();
 }
 
 void Mgmt::Options() {
@@ -118,13 +106,13 @@ void Mgmt::NewEntry(char filedata[]) {
   A->SetArtistInfo(filedata);
   artistObjects[artistExist] = A; //add Artist object to object array
   artistExist++;
-  Options();
 }
 
 void Mgmt::Search() {
 
 }
 void Mgmt::Print() { //simple, unordered
+  cout << "Artist\tAlbum\tYear\tSong\tTrack\tDuration\n";
   for (int i = 0; i < artistExist; i++) {
     cout << artistObjects[i]->GetArtist() << '\t';
     artistObjects[i]->Print();
