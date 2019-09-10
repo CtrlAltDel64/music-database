@@ -1,4 +1,5 @@
 #include <string>
+#include <fstream>
 #include "Song.hpp"
 
 using namespace std;
@@ -23,6 +24,7 @@ public:
   void AddSong();
   void AddSong(char filedata[]); //to verify
   void Print();
+  void Export(ofstream &myfile);
 
   //~Album();
 

@@ -1,7 +1,10 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <stdio.h>
 #include "Mgmt.hpp"
+
+#define clear() printf("\033[H\033[J")
 
 using namespace std;
 
@@ -9,6 +12,7 @@ Mgmt::Mgmt(){
   cout  << "1. Load existing database\n"
     << "2. Create new database\n";
   cin >> load_choice;
+  clear();
 
   artistObjects = new Artist*[artistSize]; //Creates array for pointers to Artist objects
 
@@ -60,35 +64,41 @@ void Mgmt::Import() {
 }
 
 void Mgmt::Options() {
-  cout << "\n1. Edit Database\n"
+  cout << "1. Edit Database\n"
   << "2. Search Database\n"
   << "3. Print Database\n"
   << "4. Export Database\n"
-  << "5. Exit\n";
+  << "5. Exit\n\n";
   cin >> action_choice;
 
   switch (action_choice) {
     case 1:
+      clear();
       NewEntry();
       Options();
       break;
     case 2:
+      clear();
       Search();
       Options();
       break;
     case 3:
+      clear();
       Print();
       Options();
       break;
     case 4:
+      clear();
       Export();
       Options();
       break;
     case 5:
-      cout << "\nGoodbye!";
+      clear();
+      cout << "\nGoodbye!\n";
       break;
     default:
-      cout << "\nPlease try again. Select a number 1-5.";
+      clear();
+      cout << "Please try again. Select a number 1-5.\n";
       Options();
   }
 }
@@ -111,6 +121,7 @@ void Mgmt::NewEntry(char filedata[]) {
 void Mgmt::Search() {
 
 }
+
 void Mgmt::Print() { //simple, unordered
   cout << "Artist\tAlbum\tYear\tSong\tTrack\tDuration\n";
   for (int i = 0; i < artistExist; i++) {
@@ -119,12 +130,17 @@ void Mgmt::Print() { //simple, unordered
   }
 }
 void Mgmt::Export() {
+  ofstream myfile;
+  myfile.open("export1");
+  for (int i = 0; i < artistExist; i++) {
+    myfile << artistObjects[i]->GetArtist() << '_';
+    artistObjects[i]->Export(myfile);
+  }
+  myfile.close();
 
+  cout << "Exported successfully to file export1!\n";
 }
 
 Mgmt::~Mgmt() {
   Export();
-  for(int i = 0; i < artistExist; i++) {
-    //delete loop
-  }
 }

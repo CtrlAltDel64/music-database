@@ -1,5 +1,6 @@
 #include <string>
 #include <iostream>
+#include <fstream>
 #include "Album.hpp"
 
 using namespace std;
@@ -62,5 +63,13 @@ void Album::Print() {
     cout << songObjects[i]->GetSong() << '\t';
     cout << songObjects[i]->GetTrack() << '\t';
     cout << songObjects[i]->GetDuration() << '\n';
+  }
+}
+
+void Album::Export(ofstream &myfile) {
+  for (int i = 0; i < songExist; i++) {
+    myfile << songObjects[i]->GetSong() << '_';
+    myfile << songObjects[i]->GetTrack() << '_';
+    myfile << songObjects[i]->GetDuration() << ";;" << '\n';
   }
 }

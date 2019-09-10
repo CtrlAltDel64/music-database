@@ -1,4 +1,5 @@
 #include <string>
+#include <fstream>
 #include "Album.hpp"
 
 using namespace std;
@@ -21,6 +22,7 @@ public:
   void AddAlbum();
   void AddAlbum(char filedata[]); //to verify
   void Print();
+  void Export(ofstream &myfile);
 
     //~Artist();
 

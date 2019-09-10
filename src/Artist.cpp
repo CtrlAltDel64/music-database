@@ -1,5 +1,6 @@
 #include <string>
 #include <iostream>
+#include <fstream>
 #include "Artist.hpp"
 
 using namespace std;
@@ -9,7 +10,7 @@ Artist::Artist() {
 }
 
 void Artist::SetArtistInfo() {
-  cout << "\nEnter artist name: ";
+  cout << "Enter artist name: ";
   cin >> artist;
   AddAlbum();
 }
@@ -49,5 +50,13 @@ void Artist::Print() {
     cout << albumObjects[i]->GetAlbum() << '\t';
     cout << albumObjects[i]->GetYear() << '\t';
     albumObjects[i]->Print();
+  }
+}
+
+void Artist::Export(ofstream &myfile) {
+  for (int i = 0; i < albumExist; i++) {
+    myfile << albumObjects[i]->GetAlbum() << '_';
+    myfile << albumObjects[i]->GetYear() << '_';
+    albumObjects[i]->Export(myfile);
   }
 }
