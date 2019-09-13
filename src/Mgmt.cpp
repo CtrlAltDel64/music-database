@@ -135,14 +135,22 @@ void Mgmt::SearchOption(char search[], int search_choice) {
   switch (search_choice) {
     case 1:
       for (int i = 0; i < artistExist; i++) {
-        if (search[0] == artistObjects[i]->GetArtist()[0]) {
-          cout << "true";
+        if (search[0] == artistObjects[i]->GetArtist()[0]) { //works
+          if (search[1] == artistObjects[i]->GetArtist()[1]) {
+            if (search[2] == artistObjects[i]->GetArtist()[2]) {
+              cout << artistObjects[i]->GetArtist() << " is in the database!\n";
+            }
+          }
         }
-        cout << artistObjects[i]->GetArtist()[0] << endl;
       }
+      cout << "Could not find that artist.\n";
       break;
     case 2:
-
+    for (int i = 0; i < artistExist; i++) {
+      for (int j = 0; j < artistObjects[i]->albumObjects[j]; j++) {
+        //complete;
+      }
+    }
     case 3:
 
     default:
