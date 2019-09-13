@@ -128,7 +128,7 @@ void Mgmt::Search() {
   clear();
   cout << "Enter your search string: ";
   cin >> search;
-  SearchOption(search);
+  SearchOption(search, search_choice);
 }
 
 void Mgmt::SearchOption(char search[], int search_choice) {
