@@ -138,7 +138,7 @@ void Mgmt::SearchOption(char search[], int search_choice) {
         if (search[0] == artistObjects[i]->GetArtist()[0]) {
           cout << "true";
         }
-        artistObjects[i]->GetArtist()[0];
+        cout << artistObjects[i]->GetArtist()[0] << endl;
       }
       break;
     case 2:
