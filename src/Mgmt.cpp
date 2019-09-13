@@ -143,7 +143,7 @@ void Mgmt::SearchOption(char search[], int search_choice) {
 
     default:
       clear();
-      cout << "Incorrect choice, returning back to options.\n"
+      cout << "Incorrect choice, returning back to options.\n";
       break;
   }
 }
