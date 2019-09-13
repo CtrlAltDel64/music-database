@@ -119,7 +119,33 @@ void Mgmt::NewEntry(char filedata[]) {
 }
 
 void Mgmt::Search() {
+  char search[20];
+  cout << "Search by (case sensitive):\n" // can be made case insensitive with 'a' + n characters to get capital
+    << "1. Artist\n"
+    << "2. Album\n"
+    << "3. Song\n";
+  cin >> search_choice; //no error correction with wrong value implemented
+  clear();
+  cout << "Enter your search string: ";
+  cin >> search;
+  SearchOption(search);
+}
 
+void Mgmt::SearchOption(char search[], int search_choice) {
+  switch (search_choice) {
+    case 1:
+      for (int i = 0; i < artistExist; i++) {
+        if (search[0] == artistObjects[i]->GetArtist()[0])
+      }
+    case 2:
+
+    case 3:
+
+    default:
+      clear();
+      cout << "Incorrect choice, returning back to options.\n"
+      break;
+  }
 }
 
 void Mgmt::Print() { //simple, unordered
