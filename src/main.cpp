@@ -2,9 +2,12 @@
 #include <string>
 #include "Mgmt.hpp"
 
+#define clear() printf("\033[H\033[J")
+
 using namespace std;
 
 int main() {
+  clear();
   cout << "Welcome to your new Music Database!\n"
     << "What would you like to do first?\n";
   Mgmt Database;

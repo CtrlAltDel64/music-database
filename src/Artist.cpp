@@ -61,23 +61,23 @@ void Artist::Export(ofstream &myfile) {
   }
 }
 
-void Mgmt::SearchOption(char search[], int search_choice) {
+void Artist::SearchOption(char search[], int search_choice) {
   switch (search_choice) {
     case 2: //album search
-    for (int i = 0; i < albumExist; i++) {
-      if (search[0] == albumObjects[i]->GetAlbum()[0]) { //works
-        if (search[1] == albumObjects[i]->GetAlbum()[1]) {
-          if (search[2] == albumObjects[i]->GetAlbum()[2]) {
-            cout << albumObjects[i]->GetAlbum() << " is in the database!\n";
+      for (int i = 0; i < albumExist; i++) {
+        if (search[0] == albumObjects[i]->GetAlbum()[0]) {
+          if (search[1] == albumObjects[i]->GetAlbum()[1]) {
+            if (search[2] == albumObjects[i]->GetAlbum()[2]) {
+              cout << albumObjects[i]->GetAlbum() << " is in the database!\n";
+            }
           }
         }
       }
-    }
+      break;
     case 3: //song search
-      for (int i = 0; i < songExist; i++) {
+      for (int i = 0; i < albumExist; i++) {
         albumObjects[i]->SearchOption(search, search_choice);
       }
-      cout << "Could not find that artist.\n";
       break;
   }
 }

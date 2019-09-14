@@ -10,21 +10,21 @@ using namespace std;
 
 Mgmt::Mgmt(){
   cout  << "1. Load existing database\n"
-    << "2. Create new database\n";
+    << "2. Create new database\n\n";
   cin >> load_choice;
   clear();
 
   artistObjects = new Artist*[artistSize]; //Creates array for pointers to Artist objects
 
-  if(load_choice == 1) {
-    Import();
-    Options();
-  }
-  if(load_choice == 2) {
-    Options();
-  }
-  else {
-    cout << "Creating new database!";
+  switch (load_choice) {
+    case 1:
+      Import();
+    case 2:
+      Options();
+      break;
+    default:
+      cout << "Creating new database!";
+      Options();
   }
 }
 
@@ -64,7 +64,8 @@ void Mgmt::Import() {
 }
 
 void Mgmt::Options() {
-  cout << "1. Edit Database\n"
+  cout << "Your managment options:\n"
+  << "1. Edit Database\n"
   << "2. Search Database\n"
   << "3. Print Database\n"
   << "4. Export Database\n"
@@ -120,7 +121,7 @@ void Mgmt::NewEntry(char filedata[]) {
 
 void Mgmt::Search() {
   char search[20];
-  cout << "Search by (case sensitive):\n" // can be made case insensitive with 'a' + n characters to get capital
+  cout << "Search by (case sensitive, with 3 characters minimum):\n" // can be made case insensitive with 'a' + n characters to get capital
     << "1. Artist\n"
     << "2. Album\n"
     << "3. Song\n";
@@ -143,19 +144,16 @@ void Mgmt::SearchOption(char search[], int search_choice) {
           }
         }
       }
-      cout << "Could not find that artist.\n";
       break;
     case 2: //album search
       for (int i = 0; i < artistExist; i++) {
         artistObjects[i]->SearchOption(search, search_choice);
       }
-      cout << "Could not find that artist.\n";
       break;
     case 3: //song search
       for (int i = 0; i < artistExist; i++) {
-
+        artistObjects[i]->SearchOption(search, search_choice);
       }
-      cout << "Could not find that artist.\n";
       break;
     default:
       clear();
@@ -170,6 +168,7 @@ void Mgmt::Print() { //simple, unordered
     cout << artistObjects[i]->GetArtist() << '\t';
     artistObjects[i]->Print();
   }
+  cout << endl;
 }
 void Mgmt::Export() {
   ofstream myfile;
