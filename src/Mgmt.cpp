@@ -133,7 +133,7 @@ void Mgmt::Search() {
 
 void Mgmt::SearchOption(char search[], int search_choice) {
   switch (search_choice) {
-    case 1:
+    case 1: //artist search
       for (int i = 0; i < artistExist; i++) {
         if (search[0] == artistObjects[i]->GetArtist()[0]) { //works
           if (search[1] == artistObjects[i]->GetArtist()[1]) {
@@ -145,14 +145,18 @@ void Mgmt::SearchOption(char search[], int search_choice) {
       }
       cout << "Could not find that artist.\n";
       break;
-    case 2:
-    for (int i = 0; i < artistExist; i++) {
-      for (int j = 0; j < artistObjects[i]->albumObjects[j]; j++) {
-        //complete;
+    case 2: //album search
+      for (int i = 0; i < artistExist; i++) {
+        artistObjects[i]->SearchOption(search, search_choice);
       }
-    }
-    case 3:
+      cout << "Could not find that artist.\n";
+      break;
+    case 3: //song search
+      for (int i = 0; i < artistExist; i++) {
 
+      }
+      cout << "Could not find that artist.\n";
+      break;
     default:
       clear();
       cout << "Incorrect choice, returning back to options.\n";

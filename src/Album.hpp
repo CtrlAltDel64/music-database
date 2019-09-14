@@ -25,6 +25,7 @@ public:
   void AddSong(char filedata[]); //to verify
   void Print();
   void Export(ofstream &myfile);
+  void SearchOption(char search[], int search_choice);
 
   //~Album();
 

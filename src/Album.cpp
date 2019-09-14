@@ -73,3 +73,18 @@ void Album::Export(ofstream &myfile) {
     myfile << songObjects[i]->GetDuration() << ";;" << '\n';
   }
 }
+
+void Mgmt::SearchOption(char search[], int search_choice) {
+  switch (search_choice) {
+    case 3: //song search
+    for (int i = 0; i < songExist; i++) {
+      if (search[0] == songObjects[i]->GetSong()[0]) { //works
+        if (search[1] == songObjects[i]->GetSong()[1]) {
+          if (search[2] == songObjects[i]->GetSong()[2]) {
+            cout << songObjects[i]->GetSong() << " is in the database!\n";
+          }
+        }
+      }
+    }
+  }
+}
